@@ -1,0 +1,166 @@
+<html>
+<title>
+Vulture Micro vA
+</title>
+<head>
+<style>
+#imgPanel img {
+border: #009900 solid 2px;
+margin-bottom: 20px;
+width: 100%;
+}
+.loadVid {
+width: 100%;
+color: #FFFFFF;
+background: none;
+clear: both;
+}
+</style>
+
+<script src="jquery-1.7.2.min.js"></script>
+
+<script>
+$(document).ready(function() {
+	$("#vid-pick").css("display", "block");
+});
+
+function reDoVidButton() {
+	$(".loadVid").mouseenter(function() {
+		$(this).css("background", "#003300");
+	});
+	$(".loadVid").mouseleave(function() {
+		$(this).css("background", "none");
+	});
+}
+
+function getVideo(vidName) {
+	$(document).ready(function() {
+		$("#mainVidContainer").animate({height: 0}, 300, function() {
+			$("#mainVid").html($(vidName).val());
+			$("#mainVid").ready(function() {
+				$("#mainVidContainer").animate({height: $("#mainVid").height()}, 300, function() {
+					$("#mainVidContainer").css("height", "auto");
+				});
+			});
+			reDoVidButton();
+		});
+	});
+}
+</script>
+</head>
+<body bgcolor=#000000><font color=#AAAAAA>
+<span style="font-size: 60px"><b>Vulture Micro vA</b></span><br>
+Created by ArcticCerebrate
+<br><br><br>
+<div id="mainPanel" style="float: left; width: 60%;">
+<div style="font-size: 18px;"><b><u>Vulture Micro vA</u></b> : Version 1.00.300<br>
+Command a single vulture against an onslaught of enemies.<br>
+Your greatest asset is not the vehicle plating of your bike,<br>
+nor your pack full of trusty fragmentation grenades,<br>
+nor the Ion Thrusters which make your bike the fastest in the Starcraft Universe.<br>
+Instead, your greatest asset is your skill in Vulture Micro.<br><br>
+
+Defy the odds along with other players against the computer which dares to challenge your Vulture Micro prowess.<br>
+You are one Vulture against The World.
+</div>
+<div style="margin-top: 20px; width: 90%; border: solid #009900 2px; font-size: 18px;">
+<span style="font-size: 30px;">Features:</span><br>
+<div style="margin-left: 10%; width: 89%;">
+- 5 Warm-Up Levels for those new to Vulture Micro. If the entire team chooses Veteran-Status, these first 5 are skipped, so the team can face off against tougher units at the start.<br>
+- Total of 18 levels, enough gameplay and enemies to satisfy players of varying skill level.<br>
+- Training Grounds: Even if you are struck down, you can continue to fine-tune your skills at the training grounds while the rest of the team battles to revive you.<br>
+- AFK-Mode keeps you safe when you need to leave the computer without interrupting the other players. It then allows you to continue battle after you have returned.<br>
+- <font color=#FF0000>[Boss]</font> Heroes, with their high hit-points, test your ability in prolonged one-on-one vulture micro.<br>
+- <font color=#FF9900>[Rage]</font> Heroes are smarter than regular Bosses. Rage-Bosses will cut corners to  quickly close the distance between you and itself.<br>
+- <font color=#0000FF>[Hyper]</font> Heroes are even smarter than Rage-Bosses. Hyper-Bosses predict your vulture's trajectory and attempt to intercept you.<br>
+- <font color=#FFFFFF>[Micro]</font> Crackling. Only the best ever get a chance to face off against this boss unit. It is the only Boss that performs its own Micro against yours in a deadly game of chance and reflexes.
+</div>
+
+<br><br>
+<div style="background: #995500; color: #FFFFFF;"><center><b>View a Preview Video</b></center>
+<div id="vid-pick" style="display: none; width: 100%;">
+<center><input type=button value="Show Previews" onclick='getVideo("#vult-all")'></center>
+</div>
+</div>
+<div id="mainVidContainer" style="overflow-y: hidden; overflow-x: visible; width: 100%;">
+<div id="mainVid" style="overflow-x: visible; width: 100%;">
+</div>
+</div>
+
+<textarea id="vult-all" style="display: none;">
+<div style="background: #003300; color: #FFAA00"><center>
+720p Videos are an experiment to reduce the blurriness of Youtube's re-encode processes.
+</center></div>
+<div class="loadVid" onclick='getVideo("#vult-practice")'>Practice Area</div>
+<div class="loadVid" onclick='getVideo("#vult-darktemplar");'>Level 3: Dark Templars <span style="color: #00FF00;">-720p</span></div>
+<div class="loadVid" onclick='getVideo("#vult-zergling");'>Level 6: Zerglings <span style="color: #00FF00;">-720p</span></div>
+<div class="loadVid" onclick='getVideo("#vult-ultralisk");'>Level 7: Ultralisks <span style="color: #00FF00;">-720p</span></div>
+<div class="loadVid" onclick='getVideo("#vult-lurker");'>Level 8: Lurkers</div>
+<div class="loadVid" onclick='getVideo("#vult-lurker1");'>Level 8: Lurkers (Full)</div>
+<div class="loadVid" onclick='getVideo("#vult-lurker2");'>Level 8: Lurkers <span style="color: #00FF00;">-720p</span></div>
+<div class="loadVid" onclick='getVideo("#vult-probe");'>Level 10: Probes</div>
+<div class="loadVid" onclick='getVideo("#vult-crackling");'>Level 12: Cracklings + <span style="color: #FFAA00">[Rage]</span> Crackling</div>
+<div class="loadVid" onclick='getVideo("#vult-ranged-full");'>Level 17: Hydralisks, Marines, Dragoons (Full Playthrough) <span style="color: #00FF00;">-720p</span></div>
+<div class="loadVid" onclick='getVideo("#vult-ranged-red");'>Level 17: Hydralisks, Marines, Dragoons (as Red) <span style="color: #00FF00;">-720p</span></div>
+<div class="loadVid" onclick='getVideo("#vult-ranged-blue");'>Level 17: Hydralisks, Marines, Dragoons (as Blue) <span style="color: #00FF00;">-720p</span></div>
+</textarea>
+
+<div style="display: none;">
+<textarea id="vult-practice" style="display: none;"><center>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/oTo0LbqQ_lI?rel=0" frameborder="0" allowfullscreen></iframe></center>
+</textarea>
+<textarea id="vult-darktemplar" style="display: none;"><center>
+<iframe width="640" height="480" src="http://www.youtube.com/embed/nCj26zR45DY?rel=0" frameborder="0" allowfullscreen></iframe>
+</center></textarea>
+<textarea id="vult-zergling" style="display: none;"><center>
+<iframe width="640" height="480" src="http://www.youtube.com/embed/OD4V6wIskNg?rel=0" frameborder="0" allowfullscreen></iframe>
+</center></textarea>
+<textarea id="vult-ultralisk" style="display: none;"><center>
+<iframe width="640" height="480" src="http://www.youtube.com/embed/nKW8mwsebzM?rel=0" frameborder="0" allowfullscreen></iframe>
+</center></textarea>
+<textarea id="vult-lurker" style="display: none;"><center>
+<iframe width="480" height="360" src="http://www.youtube.com/embed/pCnZMYY11a8?rel=0" frameborder="0" allowfullscreen></iframe></center>
+</textarea>
+<textarea id="vult-lurker1" style="display: none;"><center><iframe width="480" height="360" src="http://www.youtube.com/embed/-ywFywGUbRI?rel=0" frameborder="0" allowfullscreen></iframe></center>
+</textarea>
+<textarea id="vult-lurker2" style="display: none;"><center>
+<iframe width="640" height="480" src="http://www.youtube.com/embed/eGv3hwXcDcs?rel=0" frameborder="0" allowfullscreen></iframe>
+</center></textarea>
+<textarea id="vult-probe" style="display: none;"><center>
+<iframe width="480" height="360" src="http://www.youtube.com/embed/G5rFo7zgT6A?rel=0" frameborder="0" allowfullscreen></iframe>
+</center></textarea>
+<textarea id="vult-crackling" style="display: none;"><center>
+<iframe width="480" height="360" src="http://www.youtube.com/embed/HwhY3XjGUbs?rel=0" frameborder="0" allowfullscreen></iframe>
+</center></textarea>
+</center></textarea>
+<textarea id="vult-ranged" style="display: none;"><center>
+<iframe width="480" height="360" src="http://www.youtube.com/embed/Ey3cCBYs29A?rel=0" frameborder="0" allowfullscreen></iframe></center>
+</textarea>
+<textarea id="vult-ranged-full" style="display: none;"><center>
+<iframe width="640" height="480" src="http://www.youtube.com/embed/uFJ6dzXQMc4" frameborder="0" allowfullscreen></iframe></center>
+</textarea>
+<textarea id="vult-ranged-red" style="display: none;"><center>
+<iframe width="640" height="480" src="http://www.youtube.com/embed/Z1WvE2qUSVw?rel=0" frameborder="0" allowfullscreen></iframe></center>
+</textarea>
+<textarea id="vult-ranged-blue" style="display: none;"><center>
+<iframe width="640" height="480" src="http://www.youtube.com/embed/0R-ogsN0SPg?rel=0" frameborder="0" allowfullscreen></iframe></center>
+</textarea>
+</div>
+
+</div>
+</div>
+
+<div id="imgPanel" style="float: right; width: 39%;">
+<a href="screenshot1.png"><img src="screenshot1.png"></a><br>
+<a href="screenshot2.png"><img src="screenshot2.png"></a>
+</div>
+
+<div style="clear: both"></div>
+<div style="margin-top: 20px; background: #003300; border: solid #009900 2px; width: 40%;">
+Download <a href="http://www.mediafire.com/download/6m6y426o5x8ek5p/Vulture+Micro+vA.scx"><font color=#FF0000>Vulture Micro vA.scx</font></a> Version: 1.00.300
+</div>
+
+<div style="clear: both; height: 200px;"></div>
+
+</body>
+</html>

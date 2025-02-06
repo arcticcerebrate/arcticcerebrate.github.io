@@ -1,0 +1,235 @@
+<html>
+<head>
+<title>Company of Heroes</title>
+<style>
+body {
+	background: #555555;
+	color: #FFFFFF;
+}
+
+#mainTitle {
+	font-size: 7vh;
+	height: 8vh;
+	border-bottom: solid 2px #FFFFFF;
+	margin-bottom: 1vh;
+	overflow: hidden;
+}
+
+#videoContainer {
+	overflow-y: auto;
+	height: 69vh;
+}
+
+.video {
+	background: #444444;
+	margin-bottom: 20px;
+	width: 90%;
+	margin-left: 9%;
+}
+
+.video .vidTitle {
+	font-size: 20px;
+}
+
+.video .vidTitle a {
+	color: #AAFFAA;
+}
+
+#Ackbar {
+	background: #444444;
+	width: 100%;
+	height: 19vh;
+}
+
+#Ackbar div {
+	vertical-align: top;
+}
+
+#AckbarPic {
+	width: 19%;
+	display: inline-block;
+}
+
+#AckbarPic img {
+	width: 19vw;
+	height: 19vw;
+	max-height: 19vh;
+	max-width: 19vh;
+}
+
+#AckbarTips {
+	width: 79%;
+	display: inline-block;
+	margin-top: 0px;
+	margin-bottom: auto;
+	font-size: 3vh;
+	overflow-y: auto;
+	height: 100%;
+}
+#AckbarTip {
+	font-size: 12pt;
+}
+</style>
+
+<script>
+var tips = new Array();
+
+tips.push("Place land mines on commonly used roads. This helps to protect the environment since wildlife typically do not use roads.");
+tips.push("Target the rear of enemy tanks whenever possible. You can usually find the exhaust port on the rear armor.");
+tips.push("Keep a British Captain near your troops while in friendly territory to grant them defensive bonuses. The captain can achieve these bonuses because every german immediately targets him instead of the common infantry.");
+tips.push("Medics can bring wounded soldiers back into service by carrying back casualties from the field. In dire situations, you can shoot your medics for extra casualties.");
+tips.push("The M4 Crocodile Sherman possesses a coaxial flame thrower that is especially dangerous to enemy infantry since most people expect crocodiles to spit water.");
+tips.push("Fuel is a precious resource that is required to build most vehicles. There are exceptions however, such as the German motorbike which only costs manpower and legpower.");
+tips.push("When naming a multiplayer game, keep in mind that sensitive words such as \"hell\" are prohibited. This has proven unpopular with players that favor the Hellcat.");
+tips.push("Certain units can detect enemy mines either via upgrades or inherently. Other units can detect mines by stepping on them.");
+tips.push("You can garrison infantry inside various structures found around the map. The total capacity of a structure is directly proportional to the number of working toilets it has.");
+tips.push("British players can call in both, a real or a fake artillery barrage. When faced with this tactic, you can differentiate between the two using the distinctive sound created by off-map artillery. Simply scroll to a quiet part of the map and listen carefully for the sound of your troops dying.");
+tips.push("Units take less damage from enemy fire while under cover. Enemies aren't sure who they are shooting at until your unit's cover is blown.");
+tips.push("Enemy units outside of your vision are hidden by the fog of war. Your own units are always visible, where it is sunny. That's how you know you are on the \"good\" side.");
+tips.push("You can improve your population capacity by capturing more sectors. You can improve your enemies' population capacity by killing their units.");
+tips.push("German players can construct the powerful 88mm Flak, but be warned, it cannot be scuttled, for no true German would ever sabotage such a fine piece of German engineering.");
+tips.push("Certain bridges are too narrow for vehicles to cross. Some US infantrymen have also reported difficulties with narrow bridges.");
+tips.push("You can increase the speed of British command trucks by opting to remove speed governors. Once the upgrade is complete, the crew will promptly kick the governor out of the truck and leave him behind.");
+tips.push("Use tank traps to deny vehicles from passing. Despite being traps, they are quite easy to spot.");
+tips.push("Snipers are very effective at killing infantry inside enemy bunkers. They are even more effective if you keep them outside the enemy bunker.");
+tips.push("Infantry that are retreating are also harder to hit, which is to be expected because, apparently, WWII-era humans can run as fast as jeeps and motorcycles.");
+tips.push("Infantry half-tracks can reinforce your infantry units any number of times. This technology was made possible through careful studies of clown cars.");
+tips.push("Retreating infantry can run at full speed thanks to the weight lost from shitting bricks.");
+tips.push("The Hetzer is a light tank destroyer protected by 60mm of sloped armor and an additional layer of divine protection from RNGesus. It also has the capability to camouflage like a pansy. This tank is equipped with a 75mm Pak 39 L/48 Gun and possesses enough speed to go to hell.");
+tips.push("Having multiple British Lieutenants can apply more offensive bonuses to nearby troops than a single lieutenant. The constant arguing and yelling between lieutenants during battle motivates your men to end the skirmish faster.");
+tips.push("The kettenrad is one of the best scout units available. Not only can it detect land mines, but it can also reveal hidden infantry and jews nearby.");
+tips.push("The Schwimmwagen is the only vehicle in the game that can travel at full speed through water. Its true purpose was to spearhead the invasion of Britain.");
+tips.push("German weaponry is so advanced that Wehrmacht infantry can heal themselves using munitions.");
+tips.push("You can scuttle your bunkers at anytime via its self-destruct explosives. This feature also ensures that the troops manning the bunker never surrender.");
+tips.push("If your tank gunner gets killed, bring a repair squad to repair him back to operational status.");
+tips.push("US Engineers can rebuild bridges. With research, they can also demolish bridges, thus ensuring their job security.");
+tips.push("Tanks work best with infantry support. Use your troops to provide support from the flanks. Crush enemy troops with your tank to provide support from underneath.");
+tips.push("AT-Gun crews need at least two men to operate. If two of the three men crewing it are killed, the last remaining man, having nothing left to live for, will kill himself.");
+
+var tipsRand = tips.slice(0);
+
+var index = tipsRand.length;
+while (index != 0) {
+	var rand = Math.floor(Math.random() * index);
+	index--;
+	
+	var temp = tipsRand[rand];
+	tipsRand[rand] = tipsRand[index];
+	tipsRand[index] = temp;
+}
+
+function nextTip() {
+	index++;
+	if (index >= tipsRand.length) {
+		index = 0;
+	} else if (index < 0) {
+		index = tipsRand.length - 1;
+	}
+	
+	document.getElementById("AckbarTip").innerHTML = tipsRand[index];
+}
+
+function showAllTips() {
+	var tipsWindow = window.open();
+	var text = "";
+	for (i = 0; i < tips.length; i++) {
+		text += "#" + i + ": " + tips[i] + "<br><br>";
+	}
+	tipsWindow.document.write(text);
+}
+</script>
+</head>
+<body onload="nextTip();">
+<div id="mainTitle">Company of Heroes
+</div>
+<div id="videoContainer">
+	
+	<a href="https://drive.google.com/file/d/0B5LKc9sMoyR0ZEJZYnFUOHhkUjg/view?usp=sharing&resourcekey=0-2uB_kFo7WU7OA-3lnSmaxw">Tactical Mappings v1.500</a> - Install Custom Maps + Mod Switching<br>
+	<a href="https://docs.google.com/spreadsheets/d/1roYRdqC4UZ21oWSIhwGwXVbZYYI2PtKVXGAspHqHZZA/edit?usp=sharing">Temporary Maps List</a><br>
+	<a href="https://drive.google.com/file/d/0B5LKc9sMoyR0TjRicTl4R1BNdzg/view?usp=drive_link&resourcekey=0-fGENLYE2f-5ucHyqxcwCBg">Opposing Factions Mod v1.3</a> - Merger of Tactical_AI_Mod and Mixed_Factions Mod<br><br>
+	<div class="video"><span class="vidTitle">
+	<a href="https://youtu.be/sytf7CRzQc4">Flying Tanks</a></span><br>
+	<span class="vidDescription">Testing flying tanks on map: Bridge Reality<br>
+	Tested various units from US and Wehrmacht factions.
+	</div>
+	
+	<div class="video"><span class="vidTitle">
+	<a href="https://youtu.be/VTdCFfDpRtI">Attempting to Fly British Gliders</a></span><br>
+	Testing British Gliders on map: Bridge Reality<br>
+	Also tested units from Panzer Elite faction and British Faction.
+	</div>
+	
+	<div class="video"><span class="vidTitle">
+	<a href="https://youtu.be/-y9-ohkBY84">Destroying Bridge with Parked British HQ</a></span><br>
+	Destroying a bridge with demolition charges while a British HQ is parked on it.
+	</div>
+	
+	<div class="video"><span class="vidTitle">
+	<a href="https://www.youtube.com/watch?v=r4jQ3wLdwwI">Halftrack Drifting</a></span><br>
+	Halftrack performs 180-degree spin while driving backwards.
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://www.youtube.com/watch?v=ztY0gsIqM_k">
+	Self-Destructing British Truck</a></span><br>
+	The source of all those random "We've destroyed an allied unit" notifications.
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://www.youtube.com/watch?v=o74OtU35xTY">
+	Panthers vs Hetzers</a></span><br>
+	A battle between Panthers and Hetzers.<br>
+	Also joining the party: Pak38s, PIATs, a Tiger Tank, and a sniper.<br>
+	Unfortunately, the King Tiger could not make it to the party due to its speed.
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://www.youtube.com/watch?v=KRyXvo4sm3A">
+	Four Hetzers Bombed with Artillery</a></span><br>
+	Bostonian bombs four Hetzers.
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://www.youtube.com/watch?v=Cq19U20mg48">Tank Falls off Bridge</a></span><br>
+	M4 Sherman Tank jumps into the river to assault a panther tank.
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://www.youtube.com/watch?v=1_FdoRkMHMQ">Panther Crushes British Lieutenant</a></span><br>
+	Daedalon's Panther tank rolls over a British Lieutenant
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://www.youtube.com/watch?v=j0nfTEJwDsE">
+	Repairing Enemy Tanks</a></span><br>
+	Due to mixed factions mod, the Repair Tank can recover enemy German vehicles.
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://www.youtube.com/watch?v=o-AbvZ0K-iQ">Sniper Thinks He is a Seal</a></span><br>
+	Sniper decides he wants to be a seal instead of a human.
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://www.youtube.com/watch?v=U-aflh_ZxhA">Destroying HQ with Teller Mines</a></span><br>
+	How many teller mines does it take to destroy an HQ?
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://www.youtube.com/watch?v=N4FEKZlSJUE">Medic Stuck on Road</a></span><br>
+	British medic chooses the worst spot to take a break.
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://youtu.be/MlihIB7qKDY">Hellcat + Mortar Pit vs Schwimm</a></span><br>
+	A shining example illustrating the importance of veterancy.
+	</div>
+	<div class="video"><span class="vidTitle">
+	<a href="https://youtu.be/QXgGoVyKIFw">Bost Bridge-Bombs the British</a></span><br>
+	British push a bridge too far, again.
+	</div>
+</div>
+
+<div id="Ackbar">
+	<div id="AckbarPic"><center><img src="AckbarTrap.png"></center></div>
+	<div id="AckBarTips">
+		Admiral Ackbar's Tips and Tricks for Company of Heroes
+		<form>
+			<input type="button" style="margin-right: 5px;" value="Next" onClick="nextTip();">
+			<input type="button" value="Show All" onClick="showAllTips();">
+		</form>
+		<div id="AckbarTip"></div>
+	</div>
+</div>
+</body>
+</html>
